@@ -47,7 +47,7 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 
-		return prop.getProperty(key);
+		return prop.getProperty(key); 
 
 	}
 
