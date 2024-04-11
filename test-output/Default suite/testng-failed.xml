@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.AddRemoveItemBasketTest">
+      <class name="testCases.BaseClassTest">
         <methods>
           <include name="openUrl"/>
           <include name="quitDriver"/>
-          <include name="addRemoveItem"/>
+          <include name="testBaseClas"/>
         </methods>
-      </class> <!-- testCases.AddRemoveItemBasketTest -->
+      </class> <!-- testCases.BaseClassTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

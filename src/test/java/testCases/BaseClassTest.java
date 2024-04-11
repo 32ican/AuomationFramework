@@ -15,23 +15,25 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import base.ExtentManager;
 import base.Hooks;
 import junit.framework.Assert;
 import pages.HomePage;
 
 public class BaseClassTest extends Hooks {
 
-	
 	@Test
 	public void testBaseClas() {
-		
+
+		ExtentManager.log("starting TestBaseClassTest.......");
+
 		HomePage home = new HomePage(getDriver());
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView(true);", home.getTestStoreLink());
 
 		home.getTestStoreLink().click();
-		 takeScreenShot("testStore");
-		
+		// takeScreenShot("testStore");
+		Assert.fail();
 
 	}
 }

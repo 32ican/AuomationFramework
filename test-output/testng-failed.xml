@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="tests" name="Test2(failed)">
+  <test thread-count="2" parallel="tests" name="BaseClassTest(failed)">
+    <classes>
+      <class name="testCases.BaseClassTest">
+        <methods>
+          <include name="openUrl"/>
+          <include name="quitDriver"/>
+          <include name="testBaseClas"/>
+        </methods>
+      </class> <!-- testCases.BaseClassTest -->
+    </classes>
+  </test> <!-- BaseClassTest(failed) -->
+  <test thread-count="2" parallel="tests" name="AddRemoveItemBasketTest(failed)">
     <classes>
       <class name="testCases.AddRemoveItemBasketTest">
         <methods>
@@ -11,5 +22,5 @@
         </methods>
       </class> <!-- testCases.AddRemoveItemBasketTest -->
     </classes>
-  </test> <!-- Test2(failed) -->
+  </test> <!-- AddRemoveItemBasketTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

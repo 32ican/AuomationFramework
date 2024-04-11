@@ -26,11 +26,12 @@ import org.apache.commons.io.FileUtils;
 
 public class BaseClass {
 
-
 	private String configFilePath = System.getProperty("user.dir") + "\\src\\main\\java\\resources\\config.properties";
-	//public WebDriver driver = getDriver();
+	private static String  screenshotPath;
+
+	// public WebDriver driver = getDriver();
 	public static WebDriver getDriver() {
-				
+
 		return WebDriverInstance.getDriver();
 	}
 
@@ -47,7 +48,7 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 
-		return prop.getProperty(key); 
+		return prop.getProperty(key);
 
 	}
 
@@ -57,12 +58,22 @@ public class BaseClass {
 
 		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
 		File destFile = new File(path);
+		
 		try {
 			FileUtils.copyFile(srcFile, destFile);
-			;
+			setScreenshotPath(path);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 	}
 
+	public String getScreenShotPath() {
+		return screenshotPath;
+	}
+
+	public void setScreenshotPath(String path) {
+		screenshotPath = path;
+	}
 }
